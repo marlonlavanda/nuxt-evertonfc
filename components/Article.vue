@@ -8,6 +8,14 @@ defineProps({
     default: () => ({}),
   },
 });
+
+const timeAgo = ref("");
+
+onMounted(() => {
+  if (props.article.attributes.savedTimestamp) {
+    timeAgo.value = getTimeAgo(props.article.attributes.savedTimestamp);
+  }
+});
 </script>
 
 <template>
@@ -27,9 +35,7 @@ defineProps({
       </h3>
       <div class="font-light text-xs text-white">
         <span>{{ article?.attributes?.postCategoryName }} | </span>
-        <span v-if="article.attributes.savedTimestamp">
-          {{ getTimeAgo(article.attributes.savedTimestamp) }}
-        </span>
+        <span v-if="timeAgo">{{ timeAgo }}</span>
       </div>
     </div>
   </article>
