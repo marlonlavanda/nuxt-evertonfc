@@ -16,10 +16,12 @@ const restOfArticles = [...props.articles].slice(1, 4);
 </script>
 
 <template>
-  <div v-if="status === 'pending'">Loading Articles...</div>
-  <div v-if="status === 'error'" class="error">Error fetching articles.</div>
+  <div v-if="props.status === 'pending'">Loading Articles...</div>
+  <div v-if="props.status === 'error'" class="error">
+    Error fetching articles.
+  </div>
   <div
-    v-if="status === 'success' && articles.length > 0"
+    v-if="props.status === 'success' && props.articles.length > 0"
     class="w-full max-w-full flex justify-center bg-tertiary-500 pt-4"
   >
     <div class="container relative flex grow gap-4 lg:flex-row flex-col">
