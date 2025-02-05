@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tertiary-500: oklch(0.13 0.09 264.2 / 1);
+}
