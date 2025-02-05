@@ -13,8 +13,6 @@ const props = defineProps({
 
 const firstArticle = [...props.articles].slice(0, 1);
 const restOfArticles = [...props.articles].slice(1, 4);
-
-console.log("First Article", firstArticle);
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import { getTimeAgo } from "../shared/utils/time-ago.js";
+import { getTimeAgo } from "@/shared/utils/time-ago.js";
 
 defineProps({
   article: {

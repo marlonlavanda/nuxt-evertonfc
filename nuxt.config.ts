@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 
 export default defineNuxtConfig({
+  alias: {
+    "@": path.resolve(__dirname),
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
