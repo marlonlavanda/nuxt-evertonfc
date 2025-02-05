@@ -1,8 +1,11 @@
 <script setup>
-const { status, articles } = useGetHeadlines();
+import { useGetHeadlines } from "@/composables/useGetHeadlines";
+import HeadlinesGrid from "@/components/HeadlinesGrid.vue";
+
+const { articles, status } = useGetHeadlines();
 </script>
 <template>
   <div>
-    <HeadlinesGrid :articles="articles.data" :status="status" />
+    <HeadlinesGrid :articles="articles" :status="status" />
   </div>
 </template>

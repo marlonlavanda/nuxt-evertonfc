@@ -1,7 +1,8 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { getTimeAgo } from "@/shared/utils/time-ago.js";
 
-defineProps({
+const props = defineProps({
   article: {
     type: Object,
     required: true,
@@ -12,7 +13,7 @@ defineProps({
 const timeAgo = ref("");
 
 onMounted(() => {
-  if (props.article.attributes.savedTimestamp) {
+  if (props.article.attributes?.savedTimestamp) {
     timeAgo.value = getTimeAgo(props.article.attributes.savedTimestamp);
   }
 });

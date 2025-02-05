@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from "vue";
+
 const props = defineProps({
   articles: {
     type: Array,
@@ -11,8 +13,8 @@ const props = defineProps({
   },
 });
 
-const firstArticle = [...props.articles].slice(0, 1);
-const restOfArticles = [...props.articles].slice(1, 4);
+const firstArticle = computed(() => [...props.articles].slice(0, 1));
+const restOfArticles = computed(() => [...props.articles].slice(1, 4));
 </script>
 
 <template>
